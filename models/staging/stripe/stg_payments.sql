@@ -6,4 +6,4 @@ select
     -- convert amount from cent to dollar
     amount/100 as amount,
     created as created_at
-from raw.stripe.payment
+from {{ source('stripe', 'payment') }}
